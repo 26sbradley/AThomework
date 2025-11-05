@@ -5,7 +5,7 @@ public class PartB {
         Scanner input = new Scanner(System.in);
 
         // Ask for interest rate and starting balance
-        System.out.print("Enter the APR (as a percentage, for example, 5.5): ");
+        System.out.print("Enter the APR (as a percentage, for example, 8.4): ");
         double apr = input.nextDouble();
         System.out.print("Enter the balance: ");
         double balance = input.nextDouble();
