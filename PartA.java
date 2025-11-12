@@ -1,31 +1,37 @@
 import java.util.Scanner;
 
 public class PartA {
-      public static void main(String[] args) {
+    public static void main(String[] args) {
         Scanner input = new Scanner(System.in);
 
-        // Ask user for temperature and unit
-        System.out.print("Enter a temperature and a 'C' for Celsius or 'F' for Fahrenheit12 F: ");
-        double temperature = input.nextDouble();
-        char unit = input.next().toUpperCase().charAt(0); // Read 'C' or 'F'
+        System.out.print("Enter your test scores one by one, then, enter any negative number at the end. \n  ");
 
-        // Convert Fahrenheit to Celsius if needed
-        if (unit == 'F') {
-            temperature = (temperature - 32) * 5 / 9;
+        double total = 0;
+        int count = 0;
+        double score;
+
+        //loop to read scores until a negative number is entered
+        while (true) {
+            System.out.print("Enter score: ");
+            score = input.nextDouble();
+            if (score < 0) {
+                break; // this will stop the loop if it detects a negative number
+
+            }
+            total += score; // add score to total
+            count++; // increment count of scores
+
         }
-    
-
-    // Determine water state
-        String state;
-        if (temperature <= 0) {
-            state = "solid (ice)";
-        } else if (temperature >= 100) {
-            state = "gaseous (steam)";
+        if (count >0) {
+            double average = total / count; // calculate average
+            System.out.printf("Number of scores entered: %d%n", count);
+            System.out.printf("Average score: %.2f%n", average);
         } else {
-            state = "liquid";
+            System.out.println("No scores were entered.");
+       
         }
 
-        System.out.printf("At a temperature of %.2f %c, water is in a %s state.%n", 
-         (unit == 'C' ? temperature : (temperature * 9 / 5) + 32), unit, state);
+    input.close();
+
     }
 }
