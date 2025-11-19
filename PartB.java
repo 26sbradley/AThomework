@@ -1,23 +1,24 @@
 import java.util.Scanner;
 
-public class PartB {
+public class PartA {
     public static void main(String[] args) {
-        Scanner input = new Scanner(System.in);
+        Scanner in = new Scanner(System.in);
+        System.out.print("Enter number of cookies: ");
+        int cookies = in.nextInt();
+        double discount;
 
-        System.out.print("Enter a phrase: ");
-        String phrase = input.nextLine();
-
-        int x = 0;
-
-        //loop through each character in the phrase
-        for (int i = 0; i < phrase.length(); i++) {
-            if (phrase.charAt(i) == 'e' || phrase.charAt(i) == 'E') {
-                x++; // increment count if character is 'e' or 'E'
-            }
-        }
-        System.out.printf("The letter e appears " +  x  + " times in the phrase.%n", x );
-            }
-        
-
+        if (num > 12) {
+            discount = 0.10;
+        } else if (num > 6) {
+            discount = 0.05;
+        } else {
+            discount = 0.0;
     }
 
+    System.out.println("Discount = " + discount);
+}
+}
+
+//This was a logic error because the second condition, num > 12, 
+// will never run due to it being inside the else if, after num > 6
+// So, because of this, discount is never initialized if num =< 6
